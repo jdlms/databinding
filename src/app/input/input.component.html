@@ -1,0 +1,23 @@
+<!-- below is an example of one-way data binding -->
+<!-- <input type="text" (input)="setUserName($event)" /> -->
+
+<input type="text" [(ngModel)]="userName" />
+<p>{{ userName }}</p>
+
+<button [disabled]="!userName" (click)="resetUserName()">
+  Reset user name
+</button>
+<hr />
+<button (click)="toggleParagraph()">Display details</button>
+
+<p *ngIf="displayParagraph; else youClicked">
+  This paragraph can be toggled by clicking the button above.
+</p>
+
+<ng-template #youClicked>
+  <p>You clicked the button!</p>
+</ng-template>
+
+<p [ngClass]="{ blue: count > 4 }" *ngFor="let count of clickArray">
+  You've clicked {{ count }} times
+</p>
