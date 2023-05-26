@@ -1,4 +1,8 @@
 <app-navbar></app-navbar>
 <hr />
 <app-input></app-input>
-<app-game-control></app-game-control>
+
+<app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+
+<app-odd [scoreArr]="scoreArr"></app-odd>
+<app-even [scoreArr]="scoreArr"></app-even>
